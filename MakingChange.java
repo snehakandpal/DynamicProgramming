@@ -12,15 +12,15 @@ public class MakingChange {
 	static int[] memoArray;
 		
 	static int minCoins(int C) {
-		if(memoArray[C] != 0)
-			return memoArray[C];
-		
+				
 		if (denominationOfCoinContains(C)) {
 			memoArray[C] = 1;
 			return 1;
 		}
 
-
+		if(memoArray[C] != 0)
+			return memoArray[C];
+		
 		int min = Integer.MAX_VALUE;
 		for(int i = 0; i < denominationOfCoin.length; i++) {
 			if(C - denominationOfCoin[i] > 0) {

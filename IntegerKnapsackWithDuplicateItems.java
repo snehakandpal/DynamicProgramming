@@ -13,6 +13,9 @@ public class IntegerKnapsackWithDuplicateItems {
 	static int[] sizeArray;		//to display what sizes are used
 	
 	static int maxValueOfKnapsack(int C) {
+		if(memoArray[C] != 0)
+			return memoArray[C];
+		
 		if(C == 0) {
 			memoArray[C] = 0;
 			return 0;
